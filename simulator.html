@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillVerse — Placement Skill Simulator</title>
+    <meta name="description" content="Interactive placement preparation simulator. Practice soft skills, communication, interview techniques, and workplace etiquette with real-world scenarios.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="simulator.css">
+</head>
+<body data-page="simulator">
+    <!-- Background -->
+    <div class="bg-animation">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+        <div class="bg-grid"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                <span class="logo-text">Skill<span class="logo-accent">Verse</span></span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="companies.html" class="nav-link">Companies</a>
+                <a href="domains.html" class="nav-link">Domains</a>
+                <a href="simulator.html" class="nav-link active">Skill Simulator</a>
+                <a href="impact.html" class="nav-link">Impact</a>
+            </div>
+            <div class="nav-actions">
+                <a href="index.html" class="btn-glass" style="font-size:0.85rem;padding:8px 20px;">
+                    <i class="fas fa-arrow-left"></i> Back to Courses
+                </a>
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="sim-main">
+        <!-- Sim Hero -->
+        <section class="sim-hero">
+            <div class="section-container">
+                <div class="sim-hero-content">
+                    <div class="hero-badge"><i class="fas fa-brain"></i><span>Interactive Learning</span></div>
+                    <h1 class="hero-title">Placement <span class="gradient-text">Skill Simulator</span></h1>
+                    <p class="hero-subtitle">Practice real-world scenarios for interviews, communication, and workplace success. Learn through interactive simulations — not just theory.</p>
+                    <div class="sim-hero-stats">
+                        <div class="sim-stat-pill"><i class="fas fa-book-open"></i> 4 Modules</div>
+                        <div class="sim-stat-pill"><i class="fas fa-tasks"></i> 19 Lessons</div>
+                        <div class="sim-stat-pill"><i class="fas fa-gamepad"></i> Interactive Scenarios</div>
+                        <div class="sim-stat-pill"><i class="fas fa-certificate"></i> Track Progress</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Overview -->
+        <section class="sim-progress-section">
+            <div class="section-container">
+                <div class="progress-overview-card">
+                    <div class="progress-overview-left">
+                        <h3><i class="fas fa-chart-line"></i> Your Progress</h3>
+                        <p id="progress-text">Start your first module to track progress</p>
+                    </div>
+                    <div class="progress-overview-right">
+                        <div class="overall-progress-ring" id="overall-progress-ring">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+                                <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="52" stroke-dasharray="326.73" stroke-dashoffset="326.73"></circle>
+                            </svg>
+                            <span class="ring-label" id="ring-label">0%</span>
+                        </div>
+                        <button class="btn-glass" id="reset-progress-btn" style="font-size:0.8rem;padding:8px 16px;">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Module Selector (landing view) -->
+        <section class="sim-modules-section" id="modules-view">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Choose a Module</span>
+                    <h2 class="section-title">What Would You Like to <span class="gradient-text">Practice?</span></h2>
+                </div>
+                <div class="sim-module-grid" id="sim-module-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Lesson View (hidden by default) -->
+        <section class="sim-lesson-section" id="lesson-view" style="display:none;">
+            <div class="section-container">
+                <!-- Breadcrumb -->
+                <div class="sim-breadcrumb" id="sim-breadcrumb"></div>
+
+                <!-- Lesson Navigation -->
+                <div class="lesson-nav-bar" id="lesson-nav-bar"></div>
+
+                <!-- Lesson Content -->
+                <div class="lesson-content-wrapper">
+                    <!-- Phase 1: Theory -->
+                    <div class="lesson-phase" id="phase-theory">
+                        <div class="phase-header">
+                            <span class="phase-badge theory-badge"><i class="fas fa-book"></i> Theory</span>
+                            <h2 class="phase-title" id="theory-title"></h2>
+                        </div>
+                        <div class="theory-card" id="theory-content"></div>
+                        <div class="phase-actions">
+                            <button class="btn-primary btn-lg" id="start-scenario-btn">
+                                <span>Continue to Scenario</span> <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Phase 2: Scenario -->
+                    <div class="lesson-phase" id="phase-scenario" style="display:none;">
+                        <div class="phase-header">
+                            <span class="phase-badge scenario-badge"><i class="fas fa-theater-masks"></i> Scenario</span>
+                            <h2 class="phase-title">Real-World Situation</h2>
+                        </div>
+                        <div class="scenario-card">
+                            <div class="scenario-situation" id="scenario-situation"></div>
+                            <div class="scenario-options" id="scenario-options"></div>
+                            <div class="scenario-feedback" id="scenario-feedback" style="display:none;"></div>
+                        </div>
+                        <div class="phase-actions">
+                            <button class="btn-primary btn-lg" id="start-quiz-btn" style="display:none;">
+                                <span>Continue to Quiz</span> <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Phase 3: Quiz -->
+                    <div class="lesson-phase" id="phase-quiz" style="display:none;">
+                        <div class="phase-header">
+                            <span class="phase-badge quiz-badge"><i class="fas fa-question-circle"></i> Quiz</span>
+                            <h2 class="phase-title">Test Your Knowledge</h2>
+                        </div>
+                        <div class="quiz-container" id="quiz-container"></div>
+                        <div class="quiz-results" id="quiz-results" style="display:none;"></div>
+                        <div class="phase-actions">
+                            <button class="btn-primary btn-lg" id="submit-quiz-btn">
+                                <span>Submit Answers</span> <i class="fas fa-check"></i>
+                            </button>
+                            <button class="btn-primary btn-lg" id="next-lesson-btn" style="display:none;">
+                                <span>Next Lesson</span> <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Completion Modal -->
+        <div class="modal-overlay" id="completion-modal">
+            <div class="modal-content completion-modal-content">
+                <div class="completion-inner">
+                    <div class="completion-icon"><i class="fas fa-trophy"></i></div>
+                    <h2>Module <span class="gradient-text">Completed!</span></h2>
+                    <p id="completion-message"></p>
+                    <div class="completion-stats" id="completion-stats"></div>
+                    <div class="completion-actions">
+                        <button class="btn-primary btn-lg" id="back-to-modules-btn">
+                            <i class="fas fa-th-large"></i> <span>All Modules</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" style="margin-top:60px;">
+        <div class="footer-container">
+            <div class="footer-bottom" style="border-top:none;">
+                <p>&copy; 2026 SkillVerse. Built for students, by students.</p>
+                <a href="index.html" style="color:var(--accent-2);font-size:0.85rem;">← Back to SkillVerse</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="sim-data.js"></script>
+    <script src="simulator.js"></script>
+</body>
+</html>

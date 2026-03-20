@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillVerse — Free Certifications from Top Companies</title>
+    <meta name="description" content="Discover free certification courses from Google, Microsoft, IBM, AWS, Meta, and more. SkillVerse curates the best free learning paths for students across all domains.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+        <div class="bg-grid"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo" id="nav-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <span class="logo-text">Skill<span class="logo-accent">Verse</span></span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link active" data-section="home">Home</a>
+                <a href="courses.html" class="nav-link" data-section="courses">Courses</a>
+                <a href="companies.html" class="nav-link" data-section="companies">Companies</a>
+                <a href="domains.html" class="nav-link" data-section="domains">Domains</a>
+                <a href="simulator.html" class="nav-link" data-section="simulator">Skill Simulator</a>
+                <a href="impact.html" class="nav-link" data-section="stats">Impact</a>
+            </div>
+            <div class="nav-actions">
+                <div class="search-toggle" id="search-toggle">
+                    <i class="fas fa-search"></i>
+                </div>
+                <button class="btn-bookmark" id="btn-bookmark" title="Saved Courses">
+                    <i class="fas fa-bookmark"></i>
+                    <span class="bookmark-count" id="bookmark-count">0</span>
+                </button>
+                <button class="btn-primary nav-cta" id="get-started-btn">Get Started</button>
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        <!-- Search Bar -->
+        <div class="search-bar-container" id="search-bar-container">
+            <div class="search-bar">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="global-search" placeholder="Search courses, companies, or skills..." autocomplete="off">
+                <kbd class="search-shortcut">ESC</kbd>
+            </div>
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-sparkles"></i>
+                    <span>100% Free Certifications</span>
+                </div>
+                <h1 class="hero-title">
+                    Master Skills with 
+                    <span class="gradient-text">Free Certificates</span> 
+                    from Top Companies
+                </h1>
+                <p class="hero-subtitle">
+                    Discover curated free courses from Google, Microsoft, IBM, AWS, Meta, and 20+ leading companies. 
+                    Build your portfolio with industry-recognized certifications — completely free.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn-primary btn-lg" id="explore-courses-btn">
+                        <span>Explore Courses</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn-glass btn-lg" id="watch-demo-btn">
+                        <i class="fas fa-play-circle"></i>
+                        <span>How it Works</span>
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number" data-count="500">0</span><span class="hero-stat-plus">+</span>
+                        <span class="hero-stat-label">Free Courses</span>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number" data-count="25">0</span><span class="hero-stat-plus">+</span>
+                        <span class="hero-stat-label">Companies</span>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number" data-count="20">0</span><span class="hero-stat-plus">+</span>
+                        <span class="hero-stat-label">Domains</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card-stack">
+                    <div class="floating-card fc-1">
+                        <div class="fc-icon google"><i class="fab fa-google"></i></div>
+                        <div class="fc-text">
+                            <span class="fc-title">Google Cloud</span>
+                            <span class="fc-sub">Cloud Computing</span>
+                        </div>
+                        <span class="fc-badge">Free</span>
+                    </div>
+                    <div class="floating-card fc-2">
+                        <div class="fc-icon microsoft"><i class="fab fa-microsoft"></i></div>
+                        <div class="fc-text">
+                            <span class="fc-title">Microsoft Learn</span>
+                            <span class="fc-sub">Azure Fundamentals</span>
+                        </div>
+                        <span class="fc-badge">Free</span>
+                    </div>
+                    <div class="floating-card fc-3">
+                        <div class="fc-icon aws"><i class="fab fa-aws"></i></div>
+                        <div class="fc-text">
+                            <span class="fc-title">AWS Training</span>
+                            <span class="fc-sub">Machine Learning</span>
+                        </div>
+                        <span class="fc-badge">Free</span>
+                    </div>
+                    <div class="floating-card fc-4">
+                        <div class="fc-icon meta"><i class="fab fa-meta"></i></div>
+                        <div class="fc-text">
+                            <span class="fc-title">Meta Blueprint</span>
+                            <span class="fc-sub">Digital Marketing</span>
+                        </div>
+                        <span class="fc-badge">Free</span>
+                    </div>
+                    <div class="hero-glow"></div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Trusted Companies Ticker -->
+    <section class="ticker-section">
+        <div class="ticker-label">Trusted by learners using courses from</div>
+        <div class="ticker-wrapper">
+            <div class="ticker-track">
+                <div class="ticker-item"><i class="fab fa-google"></i> Google</div>
+                <div class="ticker-item"><i class="fab fa-microsoft"></i> Microsoft</div>
+                <div class="ticker-item"><i class="fab fa-aws"></i> AWS</div>
+                <div class="ticker-item"><i class="fab fa-meta"></i> Meta</div>
+                <div class="ticker-item"><i class="fab fa-ibm"></i> IBM</div>
+                <div class="ticker-item"><i class="fas fa-cloud"></i> Salesforce</div>
+                <div class="ticker-item"><i class="fab fa-cisco"></i> Cisco</div>
+                <div class="ticker-item"><i class="fas fa-database"></i> Oracle</div>
+                <div class="ticker-item"><i class="fab fa-hubspot"></i> HubSpot</div>
+                <div class="ticker-item"><i class="fas fa-chart-line"></i> LinkedIn</div>
+                <div class="ticker-item"><i class="fas fa-shield-halved"></i> Fortinet</div>
+                <div class="ticker-item"><i class="fas fa-code"></i> GitHub</div>
+                <!-- Duplicate for seamless loop -->
+                <div class="ticker-item"><i class="fab fa-google"></i> Google</div>
+                <div class="ticker-item"><i class="fab fa-microsoft"></i> Microsoft</div>
+                <div class="ticker-item"><i class="fab fa-aws"></i> AWS</div>
+                <div class="ticker-item"><i class="fab fa-meta"></i> Meta</div>
+                <div class="ticker-item"><i class="fab fa-ibm"></i> IBM</div>
+                <div class="ticker-item"><i class="fas fa-cloud"></i> Salesforce</div>
+                <div class="ticker-item"><i class="fab fa-cisco"></i> Cisco</div>
+                <div class="ticker-item"><i class="fas fa-database"></i> Oracle</div>
+                <div class="ticker-item"><i class="fab fa-hubspot"></i> HubSpot</div>
+                <div class="ticker-item"><i class="fas fa-chart-line"></i> LinkedIn</div>
+                <div class="ticker-item"><i class="fas fa-shield-halved"></i> Fortinet</div>
+                <div class="ticker-item"><i class="fas fa-code"></i> GitHub</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-links-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Browse by Page</span>
+                <h2 class="section-title">Open Each <span class="gradient-text">Section as a Page</span></h2>
+                <p class="section-subtitle">Use page-based navigation instead of long scrolling. Each major option now has its own dedicated screen.</p>
+            </div>
+            <div class="page-links-grid">
+                <a href="courses.html" class="page-link-card">
+                    <div class="page-link-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Courses</h3>
+                    <p>Browse free certifications with filters, search, bookmarks, and detailed course previews.</p>
+                </a>
+                <a href="companies.html" class="page-link-card">
+                    <div class="page-link-icon"><i class="fas fa-building"></i></div>
+                    <h3>Companies</h3>
+                    <p>Explore learning platforms from Google, Microsoft, AWS, IBM, Cisco, and more.</p>
+                </a>
+                <a href="domains.html" class="page-link-card">
+                    <div class="page-link-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>Domains</h3>
+                    <p>Open domain categories in a focused view and jump directly into relevant course pages.</p>
+                </a>
+                <a href="simulator.html" class="page-link-card">
+                    <div class="page-link-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Skill Simulator</h3>
+                    <p>Practice interviews, communication, and workplace readiness through interactive modules.</p>
+                </a>
+                <a href="impact.html" class="page-link-card">
+                    <div class="page-link-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Impact</h3>
+                    <p>View platform stats, learner outcomes, and the SkillVerse learning workflow in one place.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Domain Filter Section -->
+    <section class="domains-section" id="domains">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Explore Domains</span>
+                <h2 class="section-title">Find Courses in <span class="gradient-text">Any Domain</span></h2>
+                <p class="section-subtitle">Browse free certifications across 20+ categories from the world's leading tech companies</p>
+            </div>
+            <div class="domain-grid" id="domain-grid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses-section" id="courses">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Featured Courses</span>
+                <h2 class="section-title">Curated <span class="gradient-text">Free Certifications</span></h2>
+                <p class="section-subtitle">Hand-picked courses that offer professional certificates at zero cost</p>
+            </div>
+            <!-- Filters -->
+            <div class="filters-bar" id="filters-bar">
+                <div class="filter-chips" id="filter-chips">
+                    <button class="filter-chip active" data-filter="all">
+                        <i class="fas fa-th-large"></i> All Courses
+                    </button>
+                </div>
+                <div class="filter-actions">
+                    <select class="filter-select" id="company-filter">
+                        <option value="all">All Companies</option>
+                    </select>
+                    <select class="filter-select" id="level-filter">
+                        <option value="all">All Levels</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                    <select class="filter-select" id="sort-filter">
+                        <option value="featured">Featured</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="duration-asc">Shortest First</option>
+                        <option value="duration-desc">Longest First</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Course Grid -->
+            <div class="course-grid" id="course-grid">
+                <!-- Populated by JS -->
+            </div>
+            <div class="load-more-container" id="load-more-container">
+                <button class="btn-glass btn-lg" id="load-more-btn">
+                    <span>Load More Courses</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+            <div class="no-results" id="no-results" style="display:none;">
+                <i class="fas fa-search"></i>
+                <h3>No courses found</h3>
+                <p>Try adjusting your filters or search terms</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Companies Section -->
+    <section class="companies-section" id="companies">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Our Partners</span>
+                <h2 class="section-title">Learn from <span class="gradient-text">Industry Leaders</span></h2>
+                <p class="section-subtitle">These world-renowned companies offer free certification programs for students</p>
+            </div>
+            <div class="companies-grid" id="companies-grid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats / Impact Section -->
+    <section class="stats-section" id="stats">
+        <div class="section-container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-suffix">+</div>
+                    <div class="stat-label">Free Courses</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-building"></i></div>
+                    <div class="stat-number" data-count="25">0</div>
+                    <div class="stat-suffix">+</div>
+                    <div class="stat-label">Top Companies</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="stat-number" data-count="100">0</div>
+                    <div class="stat-suffix">%</div>
+                    <div class="stat-label">Free Certificates</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
+                    <div class="stat-number" data-count="20">0</div>
+                    <div class="stat-suffix">+</div>
+                    <div class="stat-label">Domains Covered</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-section" id="how-it-works">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Simple Process</span>
+                <h2 class="section-title">How <span class="gradient-text">SkillVerse</span> Works</h2>
+                <p class="section-subtitle">Get certified in 3 simple steps — no hidden costs, ever</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon"><i class="fas fa-compass"></i></div>
+                    <h3>Explore & Discover</h3>
+                    <p>Browse 500+ free courses across 12+ domains from Google, Microsoft, AWS, and more</p>
+                </div>
+                <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon"><i class="fas fa-book-open"></i></div>
+                    <h3>Learn & Practice</h3>
+                    <p>Access course content directly from the company platform. Learn at your own pace</p>
+                </div>
+                <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon"><i class="fas fa-award"></i></div>
+                    <h3>Get Certified</h3>
+                    <p>Complete the course and receive an industry-recognized certificate to boost your resume</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skill Simulator CTA Section -->
+    <section class="sim-cta-section" id="sim-cta">
+        <div class="section-container">
+            <div class="sim-cta-card">
+                <div class="sim-cta-left">
+                    <span class="section-tag">🎯 Placement Preparation</span>
+                    <h2 style="font-family:var(--font-display);font-size:2.2rem;font-weight:800;margin:16px 0 12px;">Master <span class="gradient-text">Placement Skills</span> with Interactive Simulations</h2>
+                    <p style="color:var(--text-secondary);font-size:1rem;line-height:1.7;margin-bottom:24px;">Practice soft skills, communication, interview techniques, and workplace etiquette through real-world scenarios. Get placement-ready with our interactive simulator.</p>
+                    <div style="display:flex;gap:24px;flex-wrap:wrap;margin-bottom:28px;">
+                        <div style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-secondary);"><span style="font-size:1.3rem;">🤝</span> Soft Skills</div>
+                        <div style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-secondary);"><span style="font-size:1.3rem;">🗣️</span> Communication</div>
+                        <div style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-secondary);"><span style="font-size:1.3rem;">💼</span> Interview Prep</div>
+                        <div style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-secondary);"><span style="font-size:1.3rem;">🏢</span> Workplace Etiquette</div>
+                    </div>
+                    <a href="simulator.html" class="btn-primary btn-lg" style="text-decoration:none;">
+                        <i class="fas fa-brain"></i> <span>Launch Skill Simulator</span> <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="sim-cta-right">
+                    <div class="sim-cta-visual">
+                        <div class="sim-feature-pill"><i class="fas fa-gamepad"></i> Interactive Scenarios</div>
+                        <div class="sim-feature-pill"><i class="fas fa-tasks"></i> 19 Practice Lessons</div>
+                        <div class="sim-feature-pill"><i class="fas fa-chart-line"></i> Track Your Progress</div>
+                        <div class="sim-feature-pill"><i class="fas fa-certificate"></i> Placement Ready</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <span class="logo-text">Skill<span class="logo-accent">Verse</span></span>
+                    </a>
+                    <p>Empowering students with free, world-class certifications from top industry leaders.</p>
+
+                </div>
+                <div class="footer-links-grid">
+                    <div class="footer-col" id="footer-domains">
+                        <h4>Domains</h4>
+                        <a href="domains.html">All Domains</a>
+                        <a href="courses.html?domain=cloud">Cloud & AI</a>
+                        <a href="courses.html?domain=cybersecurity">Cybersecurity</a>
+                        <a href="courses.html?domain=business">Business & Management</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Companies</h4>
+                        <a href="companies.html">All Companies</a>
+                        <a href="companies.html">Google</a>
+                        <a href="companies.html">Microsoft</a>
+                        <a href="companies.html">AWS</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <a href="impact.html">Career Guide</a>
+                        <a href="simulator.html">Skill Simulator</a>
+                        <a href="courses.html">Course Library</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SkillVerse. Built for students, by students.</p>
+                <div class="footer-bottom-links">
+                    <a href="index.html">Home</a>
+                    <a href="impact.html">Platform Overview</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Course Detail Modal -->
+    <div class="modal-overlay" id="course-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header" id="modal-header">
+                <!-- Populated by JS -->
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Saved Courses Sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <div class="saved-sidebar" id="saved-sidebar">
+        <div class="sidebar-header">
+            <h3><i class="fas fa-bookmark"></i> Saved Courses</h3>
+            <button class="sidebar-close" id="sidebar-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="sidebar-body" id="sidebar-body">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
